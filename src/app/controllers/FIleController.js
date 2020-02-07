@@ -5,8 +5,6 @@ class FileController {
   async store(req, res) {
     const box = await Box.findById(req.params.id);
 
-    console.log("a");
-
     const file = await File.create({
       title: req.file.originalname,
       path: req.file.key
